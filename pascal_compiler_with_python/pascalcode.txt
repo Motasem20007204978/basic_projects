@@ -1,0 +1,176 @@
+
+program example;
+    
+    { Finds the minimum of the 3 values }
+    procedure findMin(x, y, z: integer; var min: integer); 
+        
+        begin
+            min := x;
+            if (y < min) then
+                min := y;
+            
+            if (z < min) then
+                min := z;
+        end; { end of procedure findMin }  
+
+    { Finds the maximum of the 3 values }
+    procedure findMax(x, y, z: integer; var max: integer); 
+        
+        begin
+            max := x;
+            if (y > max) then
+                max := y;
+            
+            if (z > max) then
+                max := z;
+        end; { end of procedure findMax }  
+    
+    { Finds the average of the 3 values }
+    procedure findAvg(x, y, z: integer; var avg: integer); 
+        
+        begin
+            avg := (x + y + z) div 3;
+        end; { end of procedure findAvg }  
+    
+    { Finds the median of the 3 values }
+    procedure findMedian(x, y, z: integer; var median: integer); 
+        
+        begin
+            if (x > y) then
+                if (x > z) then
+                    if (y > z) then
+                        median := y;
+                    else
+                        median := z;
+                else
+                    median := x;
+            else
+                if (y > z) then
+                    if (x > z) then
+                        median := z;
+                    else
+                        median := x;
+                else
+                    median := y;
+        end; { end of procedure findMedian }  
+    
+    { Finds the mode of the 3 values }
+    procedure findMode(x, y, z: integer; var mode: integer); 
+        
+        begin
+            if (x = y) then
+                if (x = z) then
+                    mode := x;
+                else
+                    mode := z;
+            else
+                if (x = z) then
+                    mode := x;
+                else
+                    if (y = z) then
+                        mode := y;
+                    else
+                        mode := z;
+        end; { end of procedure findMode }  
+
+    {declare function}
+    function gcd(x, y: integer): integer;
+        begin
+            if (y = 0) then gcd := x;
+            else 
+                gcd := gcd(y, x mod y);
+        end;
+
+    {declare function}
+    function lcm(x, y: integer): integer;
+        begin
+            lcm := x * y div gcd(x, y);
+        end;
+    
+    
+    { This is the main program }
+    procedure main();
+
+        {variable declarations}
+        var x, y, z, min, max, avg, median, mode: integer;
+
+        var name: string;
+        var grade: real;
+        var age: integer;
+        var isMarried: boolean;
+        
+        begin
+            {assign values to variables}
+            x := 5;
+            y := 10;
+            z := 15;
+
+            {call procedure}
+            findMin(x, y, z, min);
+
+            {print results}
+            writeln('The minimum of ', x, ', ', y, ', and ', z, ' is ', min);
+
+            {call function}
+            writeln('The GCD of ', x, ' and ', y, ' is ', gcd(x, y));
+
+            {call function}
+            writeln('The LCM of ', x, ' and ', y, ' is ', lcm(x, y));
+
+            {fill variables with user input}
+            write('Enter name: ');
+            readln(name);
+            write('Enter age: ');
+            readln(age);
+            write('Enter garde: ');
+            readln(grade);
+            write('Enter state: ');
+            readln(isMarried);
+
+            {print results}
+            writeln('Name: ', name);
+            writeln('Age: ', age);
+            writeln('Grade: ', grade);
+            writeln('Married: ', isMarried);
+
+            {fill variables with user input}
+            write('Enter x: ');
+            readln(x);
+            write('Enter y: ');
+            readln(y);
+            write('Enter z: ');
+            readln(z);
+
+            {for statement}
+            
+
+            {call procedure}
+            findMax(x, y, z, max);
+
+            {print results}
+            writeln('The maximum of ', x, ', ', y, ', and ', z, ' is ', max);
+
+            {call procedure}
+            findAvg(x, y, z, avg);
+
+            {print results}
+            writeln('The average of ', x, ', ', y, ', and ', z, ' is ', avg);
+
+            {call procedure}
+            findMedian(x, y, z, median);
+
+            {print results}
+            writeln('The median of ', x, ', ', y, ', and ', z, ' is ', median);
+
+            {call procedure}
+            findMode(x, y, z, mode);
+
+            {print results}
+            writeln('The mode of ', x, ', ', y, ', and ', z, ' is ', mode);
+
+        end;
+
+    { This is the main entry point }
+    begin
+        main();
+    end.
