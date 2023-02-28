@@ -1,13 +1,10 @@
-
 class Token:
-
     def __init__(self, Name, Value, lineNo, Type=None) -> None:
-        self.name = Name 
+        self.name = Name
         self.value = Value
         self.lineNo = lineNo
         self.type = Type
         pass
-
 
     def _setType(self, type: str) -> None:
         self.type = type
@@ -18,23 +15,22 @@ class Token:
 
     def _getValue(self) -> str:
         return self.value
-    
+
     def _getType(self) -> str:
         return self.type
 
     def _getLineNo(self) -> int:
         return self.lineNo
 
-  
+
 # class Node:
 #     """docstring for Node"""
 #     def __init__(self, record: SymbolTable) -> None:
 #         self.record:SymbolTable = record
 #         self.next:Node = None
-    
+
 #     def _getRecord(self) -> SymbolTable:
 #         return self.record
-
 
 
 # class LinkedList:
@@ -43,20 +39,20 @@ class Token:
 #         self._Node:Node = None
 
 #     def _add(self,record:SymbolTable) -> None:
-        
+
 #         __newNode = Node(record)
 
-#         if self._Node is None: 
+#         if self._Node is None:
 #             self._Node = __newNode
 #             return
-        
+
 #         __currentNode = self._Node
 #         while __currentNode.next is not None:
 #             __currentNode = __currentNode.next
-        
+
 #         __currentNode.next = __newNode
-    
-    
+
+
 #     def _printTable(self) -> str:
 
 #         __currentNode = self._Node
@@ -81,4 +77,3 @@ class Token:
 #         while __currentNode is not None:
 #             yield __currentNode
 #             __currentNode = __currentNode.next
-            

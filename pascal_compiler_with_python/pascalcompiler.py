@@ -15,7 +15,7 @@ def main():
     parser._parse()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
     pass
 # end of file
